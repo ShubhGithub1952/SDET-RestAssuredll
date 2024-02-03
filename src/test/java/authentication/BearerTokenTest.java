@@ -10,6 +10,5 @@ public class BearerTokenTest {
 	public void getPeoject() {
 		JSONObject JObj = new JSONObject();
 		JObj.put("name", "RestAssured-BearerToken");
-		
 	}
 }

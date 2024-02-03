@@ -3,12 +3,13 @@ package cRUDOperationWithBDD;
 import org.hamcrest.Matchers;
 
 
+
 import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 
+import static io.restassured.RestAssured.*;
 import io.restassured.http.ContentType;
 
-import static io.restassured.RestAssured.*;
 
 import java.util.Random;
 

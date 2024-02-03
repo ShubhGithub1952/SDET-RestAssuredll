@@ -1,7 +1,7 @@
 package POM;
 
-import java.time.Duration;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,7 +19,7 @@ public class LoginVerifyThenLogout {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver= new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get(IConstants.rmgURL);
 		LoginPageOfRMGYantra loginPageRef = new LoginPageOfRMGYantra(driver);
 		loginPageRef.signIntoRMGYantra(IConstants.appUserName, IConstants.appPassword);

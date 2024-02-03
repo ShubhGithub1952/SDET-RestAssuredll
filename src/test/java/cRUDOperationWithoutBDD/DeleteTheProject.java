@@ -13,6 +13,7 @@ public class DeleteTheProject {
 public void deleteProject() {
 	RequestSpecification resquestSpec = RestAssured.given();
 	Response response = resquestSpec.delete("http://localhost:8084/projects/TY_PROJ_2602");
+	//response.getBody().asString();
 	ValidatableResponse validateResp = response.then();
 	validateResp.assertThat().contentType(ContentType.JSON);
 	validateResp.assertThat().statusCode(204);

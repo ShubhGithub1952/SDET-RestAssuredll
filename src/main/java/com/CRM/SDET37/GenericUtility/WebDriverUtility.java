@@ -5,6 +5,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
@@ -25,9 +26,7 @@ public class WebDriverUtility {
 	public void maximizeTheBrowser(WebDriver driver) {
 		driver.manage().window().maximize();
 	}
-	public void minimizeTheBrowser(WebDriver driver) {
-		driver.manage().window().minimize();
-	}
+	
 	public void refershThePage(WebDriver driver) {
 		driver.navigate().refresh();
 	}
@@ -38,10 +37,10 @@ public class WebDriverUtility {
 		driver.navigate().forward();
 	}
 	public void waitImplicitlyToPageGetsLoad(WebDriver driver) {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IConstants.implicitlyWaitDuration));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 	public void waitTillElementToClick(WebDriver driver,WebElement element) {
-		WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(IConstants.explictlyWaitDuration));
+		WebDriverWait wait =new WebDriverWait(driver,Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 	public void waitTillElementToVisible(WebDriver driver,WebElement element) {
